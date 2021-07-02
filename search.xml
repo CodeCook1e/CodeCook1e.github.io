@@ -5,12 +5,18 @@
     
     <entry>
       <title>npm常用的安装命令</title>
-      <link href="/2021/06/30/npm-chang-yong-de-an-zhuang-ming-ling/"/>
-      <url>/2021/06/30/npm-chang-yong-de-an-zhuang-ming-ling/</url>
+      <link href="/2021/06/20/npm-chang-yong-de-an-zhuang-ming-ling/"/>
+      <url>/2021/06/20/npm-chang-yong-de-an-zhuang-ming-ling/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm常用的安装命令</span><br><span class="line"></span><br><span class="line">npm i 就是npm install 简写</span><br><span class="line">npm i xxx -D   就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   就是 全局安装</span><br><span class="line">npm i xxx      就是 npm i xxx --save</span><br></pre></td></tr></table></figure><p>————————————————</p><p>使用 –save-dev 安装的 插件，被写入到 devDependencies 对象里面去，</p><p>而使用 –save 安装的插件，责被写入到 dependencies 对象里面去。</p><p>————————————————</p><p>devDependencies 和 dependencies 对象区别：</p><p>devDependencies 里面的插件只用于开发环境，不用于生产环境，</p><p>而 dependencies 是需要发布到生产环境的。<br>————————————————</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="npm常用的安装命令"><a href="#npm常用的安装命令" class="headerlink" title="npm常用的安装命令"></a>npm常用的安装命令</h1><p>npm i 就是npm install 简写<br>npm i xxx -D   就是 npm i xxx –save-dev<br>npm i xxx -S   就是 npm i xxx –save<br>npm i xxx -g   就是 全局安装<br>npm i xxx      就是 npm i xxx –save</p><h2 id="1、–save-dev-和-–save-的区别"><a href="#1、–save-dev-和-–save-的区别" class="headerlink" title="1、–save-dev 和 –save 的区别"></a>1、–save-dev 和 –save 的区别</h2><p>使用 –save-dev 安装的 插件，被写入到 devDependencies 对象里面去，</p><p>而使用 –save 安装的插件，责被写入到 dependencies 对象里面去。</p><h2 id="2、devDependencies-和-dependencies-区别"><a href="#2、devDependencies-和-dependencies-区别" class="headerlink" title="2、devDependencies 和 dependencies 区别"></a>2、devDependencies 和 dependencies 区别</h2><p>devDependencies 和 dependencies 对象区别：</p><p>devDependencies 里面的插件只用于开发环境，不用于生产环境，</p><p>而 dependencies 是需要发布到生产环境的。</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Nodejs </tag>
+            
+        </tags>
       
     </entry>
     
