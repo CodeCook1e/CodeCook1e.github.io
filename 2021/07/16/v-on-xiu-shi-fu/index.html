@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="$route 和 $router 的区别, CodeCook1e">
+    <meta name="keywords" content="v-on 修饰符, CodeCook1e">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>$route 和 $router 的区别 | CodeCook1e</title>
+    <title>v-on 修饰符 | CodeCook1e</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">$route 和 $router 的区别</h1>
+                    <h1 class="description center-align post-title">v-on 修饰符</h1>
                 </div>
             </div>
         </div>
@@ -404,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-11
+                    2021-07-16
                 </div>
                 
 
@@ -425,13 +425,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="route-和-router-的区别"><a href="#route-和-router-的区别" class="headerlink" title="$route 和 $router 的区别"></a>$route 和 $router 的区别</h1><ul>
-<li>区别如下：<ul>
-<li>$router 为 VueRouter 实例，想要导航到不同 URL，则使用 $router.push 方法</li>
-<li>$route 为当前 router 跳转对象里面，可以获取 name、path、query、params 等</li>
+                <h1 id="v-on-修饰符"><a href="#v-on-修饰符" class="headerlink" title="v-on 修饰符"></a>v-on 修饰符</h1><ul>
+<li>Vue 提供了修饰符来帮助我们方便的处理一些事情：<ul>
+<li>.stop - 调用 event.stopPropagation()</li>
+<li>.prevent - 调用 event.preventDefault()</li>
+<li>.{ keyCode | keyAlias } - 只当事件是从特定键触发时才触发回调</li>
+<li>.native - 监听组件根元素的原生事件</li>
+<li>.once - 只触发一次回调</li>
 </ul>
 </li>
 </ul>
+<h2 id="一、停止事件冒泡：-stop"><a href="#一、停止事件冒泡：-stop" class="headerlink" title="一、停止事件冒泡：.stop"></a>一、停止事件冒泡：.stop</h2><p>事件由子元素传递到父元素的过程，叫做事件冒泡</p>
+<p>阻止事件冒泡，可以在 click 后面加上 .stop</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 停止冒泡 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click.stop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="二、阻止默认事件：-prevent"><a href="#二、阻止默认事件：-prevent" class="headerlink" title="二、阻止默认事件：.prevent"></a>二、阻止默认事件：.prevent</h2><p>例如点击链接 <a> 的默认行为就是跳转，叫做默认事件</p>
+<p>取消默认事件，可以在 click 后面加上 .prevent</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 阻止默认行为 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click.prevent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 阻止默认行为，没有表达式 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>from</span> <span class="token attr-name">@submit.prevent</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>from</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="三、串联修饰符"><a href="#三、串联修饰符" class="headerlink" title="三、串联修饰符"></a>三、串联修饰符</h2><pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 串联修饰符 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click.stop.prevent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="四、键修饰符"><a href="#四、键修饰符" class="headerlink" title="四、键修饰符"></a>四、键修饰符</h2><pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 键修饰符，键别名 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">@keyup.enter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>onEnter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- 键修饰符，键代码 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">@keyup.13</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>onEnter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、只触发一次点击事件：-once"><a href="#五、只触发一次点击事件：-once" class="headerlink" title="五、只触发一次点击事件：.once"></a>五、只触发一次点击事件：.once</h2><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click.once</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doThis<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -458,7 +485,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://codecook1e.github.io/2021/07/11/route-he-router-de-qu-bie/">http://codecook1e.github.io/2021/07/11/route-he-router-de-qu-bie/</a>
+                    <a href="http://codecook1e.github.io/2021/07/16/v-on-xiu-shi-fu/">http://codecook1e.github.io/2021/07/16/v-on-xiu-shi-fu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -674,13 +701,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/16/v-on-xiu-shi-fu/">
+                <a href="/2021/07/16/v-if-he-v-show-you-shi-me-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="v-on 修饰符">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="v-if和v-show有什么区别？">
                         
-                        <span class="card-title">v-on 修饰符</span>
+                        <span class="card-title">v-if和v-show有什么区别？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -719,13 +746,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/11/vue-router/">
+                <a href="/2021/07/11/route-he-router-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue-router">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="$route 和 $router 的区别">
                         
-                        <span class="card-title">vue-router</span>
+                        <span class="card-title">$route 和 $router 的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
