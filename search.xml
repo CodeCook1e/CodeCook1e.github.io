@@ -61,6 +61,25 @@
     
     
     <entry>
+      <title>$route 和 $router 的区别</title>
+      <link href="/2021/07/19/package.json-he-package-lock.json-de-qu-bie/"/>
+      <url>/2021/07/19/package.json-he-package-lock.json-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="package-json-和-package-lock-json-的区别"><a href="#package-json-和-package-lock-json-的区别" class="headerlink" title="package.json 和 package-lock.json 的区别"></a>package.json 和 package-lock.json 的区别</h1><p>package.json 结构示例如下：</p><ul><li>name：项目名，也就是在使用 npm init 初始化时取的名字，但是如果使用的是 npm init -y 快速初始化的话，那这里的名字就是默认存放这个文件的文件名</li><li>version：版本号</li><li>private：希不希望授权别人以任何形式使用私有包或未发布的</li><li>scripts-serve：是 vue 的项目启动简写配置</li><li>scripts-build：是 vue 的打包操作简写配置</li><li>dependencies：指定了项目运行时所依赖的模块</li><li>devDependencies：指定项目开发时所需要的模块，也就是在项目开发时才用得上，一旦项目打包上线了，就将移除这里的第三方模块</li></ul><p>package-lock.json 是在运行 “npm install” 时生成的一个文件，用于记录当前状态下项目中实际安装的各个 package 的版本号、模块下载地址、及这个模块又依赖了哪些依赖。</p><p>当 node_modules 文件夹不存在或被删除时，需要用到 npm install 重新装载全部依赖时，通过 package-lock.json 可以直接表明下载地址和相关依赖，相对下载速度也更快，也不容易报错。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>v-if和v-show有什么区别？</title>
       <link href="/2021/07/16/v-if-he-v-show-you-shi-me-qu-bie/"/>
       <url>/2021/07/16/v-if-he-v-show-you-shi-me-qu-bie/</url>
