@@ -777,7 +777,7 @@ proxy<span class="token punctuation">.</span>name <span class="token operator">=
 <li><p>作用：创建一个自定义的ref，并对其依赖项跟踪和更新触发进行显式控制。</p>
 </li>
 <li><p>实现防抖效果：</p>
-<pre class="line-numbers language-vue"><code class="language-vue"><template>
+<pre class="line-numbers language-JavaScript"><code class="language-JavaScript"><template>
     <input type="text" v-model="keyword" />
     <h3>{{keyword}}</h3>
 </template>
@@ -859,7 +859,7 @@ proxy<span class="token punctuation">.</span>name <span class="token operator">=
 </ul>
 <h2 id="2-Teleport"><a href="#2-Teleport" class="headerlink" title="2.Teleport"></a>2.Teleport</h2><ul>
 <li><p>什么是Teleport？—— Teleport 是一种能够将我们的组件html结构移动到指定位置的技术。</p>
-<pre class="line-numbers language-vue"><code class="language-vue"><teleport to="移动位置">
+<pre class="line-numbers language-JavaScript"><code class="language-JavaScript"><teleport to="移动位置">
     <div v-if="isShow" class="mask">
         <div class="dialog">
             <h3>我是一个弹窗</h3>
@@ -881,7 +881,7 @@ proxy<span class="token punctuation">.</span>name <span class="token operator">=
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>使用 Suspense 包裹组件，并配置好 default 与 fallback</p>
-<pre class="line-numbers language-vue"><code class="language-vue"><template>
+<pre class="line-numbers language-JavaScript"><code class="language-JavaScript"><template>
     <div class="app">
         <h3>我是App组件</h3>
         <Suspense>
@@ -998,14 +998,14 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
 <li><p>移除 v-on.native 修饰符</p>
 <ul>
 <li><p>父组件中绑定事件</p>
-<pre class="line-numbers language-vue"><code class="language-vue"><my-component
+<pre class="line-numbers language-JavaScript"><code class="language-JavaScript"><my-component
     v-on:close="handleComponentEvent"
     v-on:click="handleNativeClickEvent"
 />
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>子组件中声明自定义事件</p>
-<pre class="line-numbers language-vue"><code class="language-vue"><script>
+<pre class="line-numbers language-JavaScript"><code class="language-JavaScript"><script>
     export default {
         emits:['close']
     }
