@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JSON vs XML, CodeCook1e">
+    <meta name="keywords" content="Vue 事件总线（EventBus）使用详细介绍, CodeCook1e">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JSON vs XML | CodeCook1e</title>
+    <title>Vue 事件总线（EventBus）使用详细介绍 | CodeCook1e</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JSON vs XML</h1>
+                    <h1 class="description center-align post-title">Vue 事件总线（EventBus）使用详细介绍</h1>
                 </div>
             </div>
         </div>
@@ -388,8 +388,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/JSON/">
-                            <span class="chip bg-color">JSON</span>
+                        <a href="/tags/vue/">
+                            <span class="chip bg-color">vue</span>
                         </a>
                         
                     </div>
@@ -404,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-12
+                    2022-01-10
                 </div>
                 
 
@@ -425,29 +425,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>JSON vs XML</p>
-<p>JSON 和 XML 都用于接收 web 服务端的数据。</p>
-<p>JSON 和 XML 在写法上有所不同，如下所示：</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"site"</span><span class="token operator">:</span><span class="token punctuation">[</span>
-        <span class="token punctuation">{</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"JSON"</span><span class="token punctuation">,</span> <span class="token property">"url"</span><span class="token operator">:</span><span class="token string">"www"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"google"</span><span class="token punctuation">,</span> <span class="token property">"url"</span><span class="token operator">:</span><span class="token string">"www.google.com"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span><span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"微博"</span><span class="token punctuation">,</span> <span class="token property">"url"</span><span class="token operator">:</span><span class="token string">"www.weibo.com"</span><span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sites</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>site</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>XML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>www<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>site</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>site</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>google<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>www.google.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>site</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>site</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>微博<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>www.weibo.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>site</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sites</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Vue-事件总线（EventBus）使用详细介绍"><a href="#Vue-事件总线（EventBus）使用详细介绍" class="headerlink" title="Vue 事件总线（EventBus）使用详细介绍"></a>Vue 事件总线（EventBus）使用详细介绍</h1><h2 id="一、EventBus-的简介"><a href="#一、EventBus-的简介" class="headerlink" title="一、EventBus 的简介"></a>一、EventBus 的简介</h2><p>EventBus 又称为事件总线。在 Vue 中可以使用 EventBus 来作为沟通桥梁的概念，就像是所有组件共用相同的事件中心，可以向该中心注册发送事件或接收事件。</p>
+<h2 id="二、如何使用-EventBus"><a href="#二、如何使用-EventBus" class="headerlink" title="二、如何使用 EventBus"></a>二、如何使用 EventBus</h2><h3 id="1、初始化"><a href="#1、初始化" class="headerlink" title="1、初始化"></a>1、初始化</h3><p>新创建一个 .js 文件，比如 enent-bus.js</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// event-bus.js</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> EventBus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、发送事件"><a href="#2、发送事件" class="headerlink" title="2、发送事件"></a>2、发送事件</h3><pre class="line-numbers language-javascript"><code class="language-javascript">EventBus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span>
+    channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>假设有两个 Vue 页面需要通信：A 和 B，A 页面在按钮上面绑定了点击事件，发送一则消息想通知 B 页面。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> A<span class="token punctuation">.</span>vue <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>template<span class="token operator">></span>
+    <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"sendMes()"</span><span class="token operator">></span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> EventBus <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../event-bus.js"</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        method<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token function">sendMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                EventBus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">"aMsg"</span><span class="token punctuation">,</span> <span class="token string">'来自A页面的消息'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来，在 B 页面中接收这则消息。</p>
+<h3 id="3、接收事件"><a href="#3、接收事件" class="headerlink" title="3、接收事件"></a>3、接收事件</h3><pre class="line-numbers language-javascript"><code class="language-javascript">EventBus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span>
+    channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> B<span class="token punctuation">.</span>vue <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>template<span class="token operator">></span>
+    <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span>msg<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> EventBus <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../event-bus.js"</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">{</span>
+                msg<span class="token punctuation">:</span> <span class="token string">''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            EventBus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">"aMsg"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// A 发送来的消息</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>同理也可以在 B 页面 向 A 页面 发送消息。总结两个方法：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 发送消息</span>
+Event<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span>channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 监听接收消息</span>
+Event<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span>channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4、移除事件监听者"><a href="#4、移除事件监听者" class="headerlink" title="4、移除事件监听者"></a>4、移除事件监听者</h3><p>通常会在 vue 页面销毁时，同时移除 EventBus 事件监听。如果想移除事件的监听，操作如下：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> eventBus <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./event-bus.js'</span>
+EventBus<span class="token punctuation">.</span><span class="token function">$off</span><span class="token punctuation">(</span><span class="token string">'aMsg'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用 EventBus.$off(‘aMsg’) 来移除应用内所有对此事件的监听。</p>
+<p>或直接调用 EventBus.$off() 来移除所有事件频道。</p>
 
                 
             </div>
@@ -474,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://codecook1e.github.io/2021/06/12/json-vs-xml/">http://codecook1e.github.io/2021/06/12/json-vs-xml/</a>
+                    <a href="http://codecook1e.github.io/2022/01/10/vue-shi-jian-zong-xian-eventbus-shi-yong-xiang-xi-jie-shao/">http://codecook1e.github.io/2022/01/10/vue-shi-jian-zong-xian-eventbus-shi-yong-xiang-xi-jie-shao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -512,8 +558,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/JSON/">
-                            <span class="chip bg-color">JSON</span>
+                        <a href="/tags/vue/">
+                            <span class="chip bg-color">vue</span>
                         </a>
                         
                     </div>
@@ -690,13 +736,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/20/ajax-jian-jie-ji-shi-yong/">
+                <a href="/2022/02/16/pinia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="AJAX简介及使用">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Pinia">
                         
-                        <span class="card-title">AJAX简介及使用</span>
+                        <span class="card-title">Pinia</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -707,7 +753,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
                         </span>
                         <span class="publish-author">
                             
@@ -720,8 +766,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AJAX/">
-                        <span class="chip bg-color">AJAX</span>
+                    <a href="/tags/Pinia/">
+                        <span class="chip bg-color">Pinia</span>
                     </a>
                     
                 </div>
@@ -735,13 +781,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/10/npm-chang-yong-de-an-zhuang-ming-ling/">
+                <a href="/2022/01/04/vue-3-kuai-su-shang-shou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="npm常用的安装命令">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="vue3 快速上手">
                         
-                        <span class="card-title">npm常用的安装命令</span>
+                        <span class="card-title">vue3 快速上手</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,7 +798,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-04
                             </span>
                         <span class="publish-author">
                             
@@ -765,8 +811,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Nodejs/">
-                        <span class="chip bg-color">Nodejs</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
